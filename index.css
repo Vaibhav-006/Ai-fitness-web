@@ -1,0 +1,137 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    background-color:rgb(1, 1, 14);
+    color: white;
+}
+nav{
+    position: fixed;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 2px 6px 2px rgb(36, 35, 35);
+    padding: 20px;
+    background-color:rgb(1, 1, 14);
+
+    cursor: pointer;
+}
+ul li a{
+    margin-inline: 25px;
+    text-decoration: none;
+    color: white;
+}
+ul{
+    margin-right: 62px;
+    margin-top: 6px;
+}
+ul li button{
+    width: 100px;
+    height: 34px;
+    background-color: rgb(8, 192, 8);
+    /* border: 2px solid white; */
+    border: none;
+    color: white;
+    font-size: 18px;
+    /* border-radius: 2px; */
+}
+ul button:hover{
+    background-color: transparent;
+    cursor: pointer;
+    border: 2px solid white;
+    color: rgb(32, 250, 32);
+     
+}
+ul li a:hover{
+    color: rgb(94, 250, 94);
+    border-bottom: 2px solid rgb(75, 250, 75);
+}
+nav .logo{
+    margin-left: 33px;
+    margin-top: 3px;
+    font-size: 23px;
+    color: rgb(70, 243, 93);
+}
+ul li{
+    list-style: none;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+  
+
+}
+.main img{
+    width: 59%;
+    margin-top: 113px;
+
+    margin-left: -190px;
+    
+    
+    
+}
+ 
+ .mainText{
+    margin-top: 200px;
+    position: relative;
+    margin-left: 90px;
+     
+}
+.mainText h1{
+    font-size: 74px;
+    color: rgb(66, 255, 66);
+}
+.mainText h3{
+    margin-top: 21px;
+    font-size: 23px;
+}
+.mainText p{
+    margin-top: 21px;
+    color: silver;
+}
+.mainText button{
+    margin-top: 32px;
+    width: 140px;
+    height: 40px;
+    border: none;
+    background-color: rgb(13, 194, 13);
+    color: white;
+    outline: none;
+    font-size: 22px;
+    cursor: pointer;
+}
+.mainText button:hover{
+    border: 2px solid white;
+    border-radius: 2px;
+    background-color: transparent;
+    color: rgb(32, 250, 32);
+
+     
+}
+
+/* program */
+.head{
+    text-align: center;
+    margin-top: 22px;
+    padding: 90px;
+}
+.head span{
+    color: rgb(60, 250, 60);
+}
+.ourProgram{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.ourProgram .crd{
+    margin-inline: 22px;
+}
+.crd img:hover{
+    transition: 1.4s ease;
+     width: 103%;
+}
