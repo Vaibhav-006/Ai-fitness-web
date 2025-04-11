@@ -135,3 +135,39 @@ ul li{
     transition: 1.4s ease;
      width: 103%;
 }
+
+/* blog */
+.ourBlog{
+    display: flex;
+    justify-content: center;
+
+}
+.ourBlog img{
+    width: 100%;
+}
+.blogCard{
+    width: 300px;
+    height: 380px;
+    margin-inline: 22px;
+    background-color: rgb(44, 43, 43);
+    border-radius: 4px;
+}
+.blogCard p{
+    color: silver;
+    margin-top: 11px;
+}
+.blogCard a{
+    text-decoration: none;
+    width: 100px;
+    padding:8px;
+    background-color: green;
+    color: white;
+    border:none;
+    margin-top: 11px;
+    font-size: 17px;
+    border-radius: 2px;
+ position: absolute;
+}
+.blogCard .blogText{
+    padding: 15px;
+}
