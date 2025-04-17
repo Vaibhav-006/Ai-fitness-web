@@ -151,7 +151,7 @@
             </div>
         </div>
 
-        <div id="form-container"></div>
+        <div id="form-container">
             <h1 class="h1">Food Feedback Form</h1>
                 <form  id="feedback-form" action="https://api.web3forms.com/submit" method="post">
                 <input type="hidden"
@@ -219,6 +219,21 @@
             </div>
         </div>
 
+        <!-- AI Health Assistant -->
+            <div class="chat-container">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message bot">
+                        <p>Hello! I'm your AI Health Assistant. How can I help you with fitness or mental health today?</p>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="Ask your health-related question...">
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </div>
+        </div>
+
+
         <div class="footer">
             <div class="footerText">
                     <h2>About us</h2><br>
@@ -250,4 +265,5 @@
 
             </div>
         </div>
+        <script src="index.js"></script>
          
