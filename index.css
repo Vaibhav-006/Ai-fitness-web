@@ -309,3 +309,98 @@ ul li{
 .footerText p{
     top: 22px;
 }
+
+/* form css  */
+
+#form-container {
+    background: #ffffff;
+    margin-top: 50px;
+    margin-left: 550px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+ }
+ 
+ .h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333333;
+    text-align: center;
+ }
+ 
+ .form-group {
+    margin-bottom: 15px;
+ }
+ 
+ label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555555;
+ }
+ 
+ input, textarea, .button2 {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333333;
+    outline: none;
+ }
+ 
+ input:focus, textarea:focus {
+    border-color: #007bff;
+ }
+ 
+ button {
+    background: #007bff;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    transition: background 0.3s ease;
+ }
+ 
+ button:hover {
+    background: #0056b3;
+ }
+ 
+ .star-rating {
+    display: flex;
+    direction: row;
+    justify-content: flex-start;
+ }
+ 
+ .star-rating input {
+    display: none;
+ }
+ 
+ .star-rating label {
+    font-size: 24px;
+    color: #cccccc;
+    cursor: pointer;
+    transition: color 0.3s ease;
+ }
+ 
+ .star-rating input:checked ~ label,
+ .star-rating label:hover,
+ .star-rating label:hover ~ label {
+    color: #ffca08;
+ }
+ 
+ .star-rating input:checked + label,
+ .star-rating input:checked ~ label {
+     color: #ffca08;
+ }
+ 
+ #form-container {
+    display: none; }
+ 
+ #toggleFormButton {
+    margin-top: 30px;
+    margin-left: 700px;
+    height: 30px;
+ }
