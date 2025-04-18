@@ -502,3 +502,118 @@ ul li{
     border: 2px solid rgb(60, 250, 60);
     color: rgb(60, 250, 60);
 }
+
+/* BMI Calculator Styles */
+.bmi-calculator {
+    padding: 50px 0;
+    background-color: rgb(1, 1, 14);
+    color: white;
+}
+
+.bmi-calculator h2 {
+    text-align: center;
+    color: rgb(60, 250, 60);
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.calculator-container {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    background-color: rgb(25, 25, 26);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.calculator-form {
+    flex: 1;
+    padding: 20px;
+}
+
+.calculator-form .form-group {
+    margin-bottom: 20px;
+}
+
+.calculator-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: rgb(60, 250, 60);
+    font-size: 16px;
+}
+
+.calculator-form input {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(1, 1, 14);
+    color: white;
+    font-size: 16px;
+}
+
+.calculate-btn {
+    width: 100%;
+    padding: 12px 24px;
+    background-color: rgb(60, 250, 60);
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.calculate-btn:hover {
+    background-color: transparent;
+    border: 2px solid rgb(60, 250, 60);
+    color: rgb(60, 250, 60);
+}
+
+.bmi-result {
+    flex: 1;
+    padding: 20px;
+    background-color: rgb(1, 1, 14);
+    border-radius: 8px;
+    border: 1px solid rgb(60, 250, 60);
+}
+
+.result-box {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.bmi-value {
+    font-size: 48px;
+    font-weight: bold;
+    color: rgb(60, 250, 60);
+    margin: 10px 0;
+}
+
+.bmi-category {
+    font-size: 20px;
+    color: white;
+}
+
+.bmi-info h4 {
+    color: rgb(60, 250, 60);
+    margin-bottom: 10px;
+}
+
+.bmi-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.bmi-info li {
+    margin-bottom: 8px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .calculator-container {
+        flex-direction: column;
+    }
+}
