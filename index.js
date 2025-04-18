@@ -213,3 +213,174 @@ function calculateBMI() {
     document.getElementById('bmi-category').textContent = category;
     document.getElementById('bmi-category').style.color = categoryColor;
 }
+
+// Blog content data
+const blogContents = {
+    1: {
+        title: "10 Ways to Stay Motivated in Your Fitness Journey",
+        content: `
+            <h2>10 Ways to Stay Motivated in Your Fitness Journey</h2>
+            <p>Maintaining motivation in your fitness journey can be challenging, but with the right strategies, you can stay on track and achieve your goals. Here are 10 proven ways to keep yourself motivated:</p>
+            
+            <h3>1. Set Clear, Achievable Goals</h3>
+            <p>Start by setting specific, measurable, and realistic goals. Break down your long-term goals into smaller, manageable milestones that you can celebrate along the way.</p>
+            
+            <h3>2. Track Your Progress</h3>
+            <p>Keep a workout journal or use a fitness app to track your progress. Seeing your improvements over time can be incredibly motivating.</p>
+            
+            <h3>3. Find a Workout Buddy</h3>
+            <p>Having a workout partner can provide accountability and make your fitness journey more enjoyable. You can motivate each other and celebrate successes together.</p>
+            
+            <h3>4. Mix Up Your Routine</h3>
+            <p>Prevent boredom by trying new exercises, classes, or workout styles. Variety keeps things interesting and challenges different muscle groups.</p>
+            
+            <h3>5. Reward Yourself</h3>
+            <p>Set up a reward system for reaching your milestones. Treat yourself to something you enjoy when you achieve your goals.</p>
+            
+            <h3>6. Focus on How You Feel</h3>
+            <p>Pay attention to the positive changes in your energy levels, mood, and overall well-being. These internal rewards can be powerful motivators.</p>
+            
+            <h3>7. Create a Supportive Environment</h3>
+            <p>Surround yourself with people who support your fitness goals and create a workout space that inspires you to exercise.</p>
+            
+            <h3>8. Visualize Your Success</h3>
+            <p>Take time to visualize yourself achieving your fitness goals. This mental practice can strengthen your motivation and commitment.</p>
+            
+            <h3>9. Learn from Setbacks</h3>
+            <p>View challenges and setbacks as learning opportunities rather than failures. Use them to adjust your approach and grow stronger.</p>
+            
+            <h3>10. Celebrate Small Wins</h3>
+            <p>Acknowledge and celebrate every achievement, no matter how small. This positive reinforcement will keep you motivated to continue.</p>
+        `
+    },
+    2: {
+        title: "Essential Nutrition Tips for Muscle Growth",
+        content: `
+            <h2>Essential Nutrition Tips for Muscle Growth</h2>
+            <p>Building muscle requires more than just lifting weights. Proper nutrition plays a crucial role in muscle development and recovery. Here's what you need to know:</p>
+            
+            <h3>1. Protein Intake</h3>
+            <p>Protein is the building block of muscle. Aim for 1.6-2.2 grams of protein per kilogram of body weight daily. Include high-quality protein sources like:</p>
+            <ul>
+                <li>Lean meats (chicken, turkey, lean beef)</li>
+                <li>Fish (salmon, tuna, cod)</li>
+                <li>Eggs and dairy products</li>
+                <li>Plant-based proteins (beans, lentils, tofu)</li>
+            </ul>
+            
+            <h3>2. Carbohydrates for Energy</h3>
+            <p>Carbs provide the energy needed for intense workouts. Focus on complex carbohydrates like:</p>
+            <ul>
+                <li>Whole grains (brown rice, quinoa, oats)</li>
+                <li>Sweet potatoes</li>
+                <li>Fruits and vegetables</li>
+            </ul>
+            
+            <h3>3. Healthy Fats</h3>
+            <p>Don't neglect healthy fats, which are essential for hormone production and overall health. Include:</p>
+            <ul>
+                <li>Avocados</li>
+                <li>Nuts and seeds</li>
+                <li>Olive oil</li>
+                <li>Fatty fish</li>
+            </ul>
+            
+            <h3>4. Timing Your Meals</h3>
+            <p>Eat protein-rich meals every 3-4 hours to maintain a positive nitrogen balance. Have a protein-rich snack before and after workouts.</p>
+            
+            <h3>5. Hydration</h3>
+            <p>Stay well-hydrated to support muscle function and recovery. Aim for at least 2-3 liters of water daily, more if you're training intensely.</p>
+            
+            <h3>6. Supplements</h3>
+            <p>While whole foods should be your primary source of nutrients, consider these supplements:</p>
+            <ul>
+                <li>Whey protein</li>
+                <li>Creatine</li>
+                <li>BCAAs</li>
+                <li>Multivitamins</li>
+            </ul>
+        `
+    },
+    3: {
+        title: "Importance of Recovery in Your Workout Routine",
+        content: `
+            <h2>Importance of Recovery in Your Workout Routine</h2>
+            <p>Recovery is just as important as the workout itself. Proper recovery allows your muscles to repair, rebuild, and grow stronger. Here's why recovery matters and how to optimize it:</p>
+            
+            <h3>1. Muscle Repair and Growth</h3>
+            <p>During recovery, your body repairs the microscopic damage to muscle fibers caused by exercise. This repair process is what leads to muscle growth and increased strength.</p>
+            
+            <h3>2. Preventing Overtraining</h3>
+            <p>Signs of overtraining include:</p>
+            <ul>
+                <li>Persistent muscle soreness</li>
+                <li>Decreased performance</li>
+                <li>Increased resting heart rate</li>
+                <li>Mood changes</li>
+                <li>Sleep disturbances</li>
+            </ul>
+            
+            <h3>3. Recovery Strategies</h3>
+            <p>Implement these recovery techniques:</p>
+            <ul>
+                <li>Get 7-9 hours of quality sleep</li>
+                <li>Stay hydrated throughout the day</li>
+                <li>Eat protein-rich meals</li>
+                <li>Include active recovery days</li>
+                <li>Practice stretching and mobility work</li>
+            </ul>
+            
+            <h3>4. Active Recovery</h3>
+            <p>Active recovery involves low-intensity exercise that promotes blood flow without causing additional stress. Examples include:</p>
+            <ul>
+                <li>Light walking</li>
+                <li>Yoga</li>
+                <li>Swimming</li>
+                <li>Cycling at a relaxed pace</li>
+            </ul>
+            
+            <h3>5. Nutrition for Recovery</h3>
+            <p>Post-workout nutrition is crucial for recovery. Focus on:</p>
+            <ul>
+                <li>Protein for muscle repair</li>
+                <li>Carbohydrates to replenish glycogen</li>
+                <li>Anti-inflammatory foods</li>
+                <li>Electrolytes for hydration</li>
+            </ul>
+            
+            <h3>6. Listen to Your Body</h3>
+            <p>Pay attention to your body's signals and adjust your training accordingly. If you're feeling excessively tired or sore, take an extra rest day.</p>
+        `
+    }
+};
+
+function showBlogContent(blogId) {
+    const modal = document.getElementById('blogModal');
+    const content = document.getElementById('blogContent');
+    
+    if (blogContents[blogId]) {
+        content.innerHTML = blogContents[blogId].content;
+        modal.style.display = 'block';
+        modal.style.position = 'fixed';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100%';
+        modal.style.height = '100%';
+        modal.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+        modal.style.zIndex = '9999';
+        modal.style.overflowY = 'auto';
+    }
+}
+
+function closeBlogModal() {
+    const modal = document.getElementById('blogModal');
+    modal.style.display = 'none';
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('blogModal');
+    if (event.target == modal) {
+        closeBlogModal();
+    }
+}
