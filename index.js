@@ -174,3 +174,36 @@ document.getElementById('user-input').addEventListener('keypress', function(e) {
         sendMessage();
     }
 });
+
+function calculateBMI() {
+    const height = parseFloat(document.getElementById('bmi-height').value);
+    const weight = parseFloat(document.getElementById('bmi-weight').value);
+
+    // Validate inputs
+    if (isNaN(height) || isNaN(weight) || height <= 0 || weight <= 0) {
+        alert('Please enter valid height and weight values');
+        return;
+    }
+
+    // Calculate BMI (weight in kg / (height in m)^2)
+    const heightInMeters = height / 100;
+    const bmi = weight / (heightInMeters * heightInMeters);
+    const roundedBMI = bmi.toFixed(1);
+
+    // Determine BMI category
+    let category = '';
+    let categoryColor = '';
+
+    if (bmi < 18.5) {
+        category = 'Underweight';
+        categoryColor = '#4CAF50'; // Green
+    } else if (bmi < 25) {
+        category = 'Normal weight';
+        categoryColor = '#2196F3'; // Blue
+    } else if (bmi < 30) {
+        category = 'Overweight';
+        categoryColor = '#FFC107'; // Yellow
+    } else {
+        category = 'Obesity';
+        categoryColor = '#F44336'; // Red
+    }
