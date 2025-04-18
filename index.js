@@ -207,3 +207,9 @@ function calculateBMI() {
         category = 'Obesity';
         categoryColor = '#F44336'; // Red
     }
+
+    // Update the result display
+    document.getElementById('bmi-value').textContent = roundedBMI;
+    document.getElementById('bmi-category').textContent = category;
+    document.getElementById('bmi-category').style.color = categoryColor;
+}
