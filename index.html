@@ -116,38 +116,47 @@
             </div>
         </div>
 
-         <!-- Blogs -->
-         <div class="blog" id="blog">
+         
+        <!-- Blogs -->
+        <div class="blog" id="blog">
             <div class="head">
                 <h1>Read <span>Blogs</span></h1>
             </div>
             <div class="ourBlog">
                 <div class="blogCard">
-                    <img src="blog4.jpg" alt="">
+                    <img src="blog4.jpg" alt="Fitness Motivation">
                     <div class="blogText">
-                        <h2>How To Make Abs ?</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas facilis laborum sapiente possimus!</p>
-                     <a href="https://www.insider.com/guides/health/fitness/how-to-get-abs">Read More</a>
+                        <h2>10 Ways to Stay Motivated in Your Fitness Journey</h2>
+                        <p>Discover proven strategies to maintain your fitness motivation and achieve your goals...</p>
+                        <button class="read-more-btn" onclick="showBlogContent(1)">Read More</button>
                     </div>
                 </div>
 
                 <div class="blogCard">
-                    <img src="blog1.jpg" alt="">
+                    <img src="blog1.jpg" alt="Nutrition Guide">
                     <div class="blogText">
-                        <h2>How To Make Abs ?</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas facilis laborum sapiente possimus!</p>
-                     <a href="https://www.insider.com/guides/health/fitness/how-to-get-abs">Read More</a>
+                        <h2>Essential Nutrition Tips for Muscle Growth</h2>
+                        <p>Learn about the key nutrients and dietary strategies needed for optimal muscle development...</p>
+                        <button class="read-more-btn" onclick="showBlogContent(2)">Read More</button>
                     </div>
                 </div>
+
                 <div class="blogCard">
-                    <img src="blog5.jpg" alt="">
+                    <img src="blog5.jpg" alt="Workout Recovery">
                     <div class="blogText">
-                        <h2>How To Make Abs ?</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas facilis laborum sapiente possimus!</p>
-                     <a href="https://www.insider.com/guides/health/fitness/how-to-get-abs">Read More</a>
+                        <h2>Importance of Recovery in Your Workout Routine</h2>
+                        <p>Understand why proper recovery is crucial for muscle growth and overall fitness progress...</p>
+                        <button class="read-more-btn" onclick="showBlogContent(3)">Read More</button>
                     </div>
                 </div>
-                
+            </div>
+        </div>
+
+        <!-- Blog Content Modal -->
+        <div id="blogModal" class="modal">
+            <div class="modal-content blog-modal-content">
+                <span class="close" onclick="closeBlogModal()">&times;</span>
+                <div id="blogContent"></div>
             </div>
         </div>
 
