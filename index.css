@@ -137,39 +137,194 @@ ul li{
 }
 
 /* blog */
-.ourBlog{
+.blog {
+    padding: 60px 0;
+    background-color: rgb(1, 1, 14);
+}
+
+.blog .head {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.blog .head h1 {
+    font-size: 42px;
+    color: white;
+}
+
+.blog .head span {
+    color: rgb(60, 250, 60);
+}
+
+.ourBlog {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
 
+.blogCard {
+    width: 350px;
+    background-color: rgb(25, 25, 26);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
 }
-.ourBlog img{
+
+.blogCard:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(60, 250, 60, 0.2);
+}
+
+.blogCard img {
     width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
-.blogCard{
-    width: 300px;
-    height: 380px;
-    margin-inline: 22px;
-    background-color: rgb(44, 43, 43);
+
+.blogCard:hover img {
+    transform: scale(1.05);
+}
+
+.blogText {
+    padding: 25px;
+}
+
+.blogText h2 {
+    color: rgb(60, 250, 60);
+    font-size: 20px;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    min-height: 56px;
+}
+
+.blogText p {
+    color: #a0a0a0;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    min-height: 80px;
+}
+
+.read-more-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(60, 250, 60);
+    color: rgb(1, 1, 14);
+    border: 2px solid transparent;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background-color: transparent;
+    border-color: rgb(60, 250, 60);
+    color: rgb(60, 250, 60);
+}
+
+/* Blog Modal Styles */
+.blog-modal-content {
+    background-color: rgb(25, 25, 26);
+    margin: 3% auto;
+    padding: 40px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 900px;
+    color: white;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.blog-modal-content h2 {
+    color: rgb(60, 250, 60);
+    font-size: 32px;
+    margin-bottom: 25px;
+    line-height: 1.3;
+}
+
+.blog-modal-content h3 {
+    color: rgb(60, 250, 60);
+    font-size: 24px;
+    margin: 30px 0 15px;
+}
+
+.blog-modal-content p {
+    color: #a0a0a0;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.blog-modal-content ul {
+    color: #a0a0a0;
+    margin: 15px 0 25px 20px;
+}
+
+.blog-modal-content li {
+    margin-bottom: 12px;
+    line-height: 1.6;
+    position: relative;
+    padding-left: 20px;
+}
+
+.blog-modal-content li::before {
+    content: "•";
+    color: rgb(60, 250, 60);
+    position: absolute;
+    left: 0;
+    font-size: 20px;
+}
+
+.blog-modal-content .close {
+    position: absolute;
+    right: 25px;
+    top: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(60, 250, 60);
+    transition: transform 0.3s ease;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.blog-modal-content .close:hover {
+    transform: rotate(90deg);
+    background-color: rgba(60, 250, 60, 0.1);
+}
+
+/* Scrollbar Styles for Modal */
+.blog-modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.blog-modal-content::-webkit-scrollbar-track {
+    background: rgb(1, 1, 14);
     border-radius: 4px;
 }
-.blogCard p{
-    color: silver;
-    margin-top: 11px;
+
+.blog-modal-content::-webkit-scrollbar-thumb {
+    background: rgb(60, 250, 60);
+    border-radius: 4px;
 }
-.blogCard a{
-    text-decoration: none;
-    width: 100px;
-    padding:8px;
-    background-color: green;
-    color: white;
-    border:none;
-    margin-top: 11px;
-    font-size: 17px;
-    border-radius: 2px;
- position: absolute;
-}
-.blogCard .blogText{
-    padding: 15px;
+
+.blog-modal-content::-webkit-scrollbar-thumb:hover {
+    background: rgb(40, 200, 40);
 }
 /* contact */
 
