@@ -229,6 +229,14 @@
         </div>
 
         <!-- AI Health Assistant -->
+
+        <div class="ai-assistant" id="ai-assistant">
+            <div class="head">
+                <h1>AI Health <span>Assistant</span></h1>
+            </div>
+            <div class="assistant-controls">
+                <button onclick="openDietPlanModal()" class="diet-plan-btn">Generate Diet Plan</button>
+            </div>
             <div class="chat-container">
                 <div class="chat-messages" id="chat-messages">
                     <div class="message bot">
@@ -241,6 +249,61 @@
                 </div>
             </div>
         </div>
+
+        <!-- Diet Plan Generator Modal -->
+        <div id="dietPlanModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeDietPlanModal()">&times;</span>
+                <h2>Generate Your Personalized Diet Plan</h2>
+                <div class="diet-form">
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" min="15" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="gender">Gender:</label>
+                        <select id="gender">
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="weight">Weight (kg):</label>
+                        <input type="number" id="weight" min="30" max="200">
+                    </div>
+                    <div class="form-group">
+                        <label for="height">Height (cm):</label>
+                        <input type="number" id="height" min="100" max="250">
+                    </div>
+                    <div class="form-group">
+                        <label for="activity">Activity Level:</label>
+                        <select id="activity">
+                            <option value="sedentary">Sedentary (little or no exercise)</option>
+                            <option value="light">Lightly active (1-3 days/week)</option>
+                            <option value="moderate">Moderately active (3-5 days/week)</option>
+                            <option value="very">Very active (6-7 days/week)</option>
+                            <option value="extra">Extra active (very active + physical job)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="goal">Goal:</label>
+                        <select id="goal">
+                            <option value="weight_loss">Weight Loss</option>
+                            <option value="muscle_gain">Muscle Gain</option>
+                            <option value="maintenance">Maintenance</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="allergies">Food Allergies/Preferences:</label>
+                        <input type="text" id="allergies" placeholder="e.g., nuts, dairy, vegetarian">
+                    </div>
+                    <button onclick="generateDietPlan()" class="generate-btn">Generate Plan</button>
+                </div>
+                <div id="dietPlanResult" class="diet-plan-result"></div>
+            </div>
+        </div>
+
 
         <section class="bmi-calculator">
             <div class="container">
