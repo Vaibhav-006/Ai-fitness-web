@@ -658,6 +658,161 @@ ul li{
     color: rgb(60, 250, 60);
 }
 
+/* Diet Plan Generator Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: rgb(25, 25, 26);
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 600px;
+    color: white;
+    position: relative;
+    z-index: 10000;
+}
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: rgb(60, 250, 60);
+    z-index: 10001;
+}
+
+.diet-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    color: rgb(60, 250, 60);
+    font-size: 16px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(1, 1, 14);
+    color: white;
+    font-size: 16px;
+}
+
+.generate-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: rgb(60, 250, 60);
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.generate-btn:hover {
+    background-color: transparent;
+    border: 2px solid rgb(60, 250, 60);
+    color: rgb(60, 250, 60);
+}
+
+.diet-plan-result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgb(1, 1, 14);
+    border-radius: 8px;
+    border: 1px solid rgb(60, 250, 60);
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.meal-plan {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: rgb(25, 25, 26);
+    border-radius: 8px;
+    border: 1px solid rgb(60, 250, 60);
+}
+
+.plan-details {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: rgb(25, 25, 26);
+    border-radius: 8px;
+    border: 1px solid rgb(60, 250, 60);
+} 
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.form-group label {
+    color: rgb(60, 250, 60);
+    font-size: 16px;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(1, 1, 14);
+    color: white;
+    font-size: 16px;
+}
+
+.generate-btn {
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: rgb(60, 250, 60);
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.generate-btn:hover {
+    background-color: transparent;
+    border: 2px solid rgb(60, 250, 60);
+    color: rgb(60, 250, 60);
+}
+
+.diet-plan-result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgb(1, 1, 14);
+    border-radius: 8px;
+    border: 1px solid rgb(60, 250, 60);
+}
+
 /* BMI Calculator Styles */
 .bmi-calculator {
     padding: 50px 0;
