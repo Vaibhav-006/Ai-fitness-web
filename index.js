@@ -384,3 +384,203 @@ window.onclick = function(event) {
         closeBlogModal();
     }
 }
+
+// Diet Plan Generator Functions
+function openDietPlanModal() {
+    const modal = document.getElementById('dietPlanModal');
+    if (modal) {
+        modal.style.display = 'block';
+        modal.style.position = 'fixed';
+        modal.style.top = '0';
+        modal.style.left = '0';
+        modal.style.width = '100%';
+        modal.style.height = '100%';
+        modal.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+        modal.style.zIndex = '9999';
+        modal.style.overflowY = 'auto';
+        
+        // Clear any previous results
+        const resultDiv = document.getElementById('dietPlanResult');
+        if (resultDiv) {
+            resultDiv.innerHTML = '';
+        }
+    }
+}
+
+function closeDietPlanModal() {
+    const modal = document.getElementById('dietPlanModal');
+    if (modal) {
+        modal.style.display = 'none';
+        // Clear the results
+        const resultDiv = document.getElementById('dietPlanResult');
+        if (resultDiv) {
+            resultDiv.innerHTML = '';
+        }
+    }
+}
+
+function calculateBMR(weight, height, age, gender) {
+    // Mifflin-St Jeor Equation
+    let bmr = 10 * weight + 6.25 * height - 5 * age;
+    if (gender === 'male') {
+        bmr += 5;
+    } else {
+        bmr -= 161;
+    }
+    return Math.round(bmr);
+}
+
+function calculateTDEE(bmr, activity) {
+    const activityMultipliers = {
+        'sedentary': 1.2,
+        'light': 1.375,
+        'moderate': 1.55,
+        'very': 1.725,
+        'extra': 1.9
+    };
+    return Math.round(bmr * activityMultipliers[activity]);
+}
+
+function adjustCaloriesForGoal(tdee, goal) {
+    const adjustments = {
+        'weight_loss': -500,
+        'muscle_gain': 500,
+        'maintenance': 0
+    };
+    return tdee + adjustments[goal];
+}
+
+// Add event listener for the generate button
+document.addEventListener('DOMContentLoaded', function() {
+    const generateBtn = document.querySelector('.generate-btn');
+    if (generateBtn) {
+        generateBtn.addEventListener('click', generateDietPlan);
+        console.log('Generate button event listener added');
+    } else {
+        console.error('Generate button not found');
+    }
+});
+
+async function generateDietPlan() {
+    console.log('Generate Diet Plan function called');
+    
+    const age = document.getElementById('age').value;
+    const gender = document.getElementById('gender').value;
+    const weight = document.getElementById('weight').value;
+    const height = document.getElementById('height').value;
+    const activity = document.getElementById('activity').value;
+    const goal = document.getElementById('goal').value;
+    const allergies = document.getElementById('allergies').value;
+
+    console.log('Form values:', { age, gender, weight, height, activity, goal, allergies });
+
+    // Validate inputs
+    if (!age || !weight || !height) {
+        alert('Please fill in all required fields');
+        return;
+    }
+
+    // Show loading state
+    const resultDiv = document.getElementById('dietPlanResult');
+    if (!resultDiv) {
+        console.error('Result div not found');
+        return;
+    }
+    resultDiv.innerHTML = '<p>Generating your personalized diet plan...</p>';
+
+    try {
+        // Calculate BMR and daily calorie needs
+        const bmr = calculateBMR(weight, height, age, gender);
+        const tdee = calculateTDEE(bmr, activity);
+        const calorieGoal = adjustCaloriesForGoal(tdee, goal);
+
+        console.log('Calculated values:', { bmr, tdee, calorieGoal });
+
+        // Generate diet plan using Gemini API
+        const prompt = `Create a concise 7-day diet plan for a ${age}-year-old ${gender} who is ${height}cm tall and weighs ${weight}kg. 
+        Activity level: ${activity}. 
+        Goal: ${goal}. 
+        Allergies/Preferences: ${allergies}. 
+        Daily calorie target: ${calorieGoal} calories. 
+        Include breakfast, lunch, dinner, and 2 snacks for each day. 
+        Format as a simple HTML table with days as rows and meals as columns. 
+        Include approximate calories and macros for each meal. 
+        Keep the response focused only on the meal plan without extra explanations.`;
+
+        console.log('Making API request...');
+        const response = await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=' + API_KEY, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                contents: [{
+                    parts: [{
+                        text: prompt
+                    }]
+                }]
+            })
+        });
+
+        console.log('API Response status:', response.status);
+        
+        if (!response.ok) {
+            throw new Error(`API request failed with status: ${response.status}`);
+        }
+
+        const data = await response.json();
+        console.log('API Response data:', data);
+        
+        if (!data.candidates || !data.candidates[0] || !data.candidates[0].content || !data.candidates[0].content.parts || !data.candidates[0].content.parts[0]) {
+            throw new Error('Invalid API response format');
+        }
+
+        const dietPlan = data.candidates[0].content.parts[0].text;
+        console.log('Generated diet plan:', dietPlan);
+
+        // Display the diet plan
+        resultDiv.innerHTML = `
+            <h3>Your Personalized Diet Plan</h3>
+            <div class="plan-details">
+                <p><strong>Daily Calorie Target:</strong> ${calorieGoal} calories</p>
+            </div>
+            <div class="meal-plan">
+                ${dietPlan}
+            </div>
+        `;
+
+        // Make sure the modal is visible and properly positioned
+        const modal = document.getElementById('dietPlanModal');
+        if (modal) {
+            modal.style.display = 'block';
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.7)';
+            modal.style.zIndex = '9999';
+            modal.style.overflowY = 'auto';
+        }
+
+        // Scroll to the top of the modal content
+        const modalContent = document.querySelector('.modal-content');
+        if (modalContent) {
+            modalContent.scrollTop = 0;
+        }
+    } catch (error) {
+        console.error('Error generating diet plan:', error);
+        resultDiv.innerHTML = `
+            <p>Sorry, there was an error generating your diet plan. Please try again later.</p>
+            <p>Error details: ${error.message}</p>
+        `;
+    }
+}
+
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('dietPlanModal');
+    if (event.target == modal) {
+        closeDietPlanModal();
+    }
+}
