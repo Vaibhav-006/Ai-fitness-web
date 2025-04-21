@@ -1224,3 +1224,101 @@ nav ul li button:hover{
         min-width: 100px;
     }
 }
+ @media (max-width: 768px){
+    nav{
+        padding: 12px 20px;
+    }
+    
+    nav .logo{
+        font-size: 28px;
+    }
+    
+    nav ul li a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    nav ul li a.nav-btn {
+        padding: 6px 20px;
+        font-size: 14px;
+        height: 32px;
+        min-width: 100px;
+    }
+    
+    nav ul li button {
+        padding: 6px 20px;
+        font-size: 14px;
+        height: 32px;
+        min-width: 100px;
+    }
+}
+@media (max-width: 1200px) {
+    .ourPlans {
+        gap: 15px;
+    }
+    
+    .ourPlans .card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .plans {
+        padding: 50px 0;
+    }
+    
+    .plans .head h1 {
+        font-size: 30px;
+    }
+    
+    .ourPlans .card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .ourPlans .card.featured {
+        transform: none;
+    }
+    
+    .ourPlans .card.featured:hover {
+        transform: translateY(-10px);
+    }
+}
+@media (max-width: 1200px) {
+    .ourBlog {
+        gap: 20px;
+    }
+    
+    .blogCard {
+        width: 320px;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog {
+        padding: 40px 0;
+    }
+    
+    .blog .head h1 {
+        font-size: 32px;
+    }
+    
+    .blogCard {
+        width: 100%;
+        max-width: 400px;
+    }
+    
+    .blog-modal-content {
+        padding: 25px;
+        margin: 5% auto;
+        width: 95%;
+    }
+    
+    .blog-modal-content h2 {
+        font-size: 24px;
+    }
+    
+    .blog-modal-content h3 {
+        font-size: 20px;
+    }
+}
