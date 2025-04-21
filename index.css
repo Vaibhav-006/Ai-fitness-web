@@ -532,23 +532,164 @@ ul li{
     border: 2px solid rgb(60, 250, 60);
     color: rgb(60, 250, 60);
 }
-    /* Footer */
+/* Footer */
 
-.footer{
+.footer {
+    background-color: rgb(25, 25, 26);
+    padding: 60px 0 40px;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 50px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-    margin-top: 33px;
-    padding: 11px;
-    box-shadow: 0px 2px 8px 2px rgb(73, 72, 72);
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 50px;
+    gap: 40px;
+}
 
+.footerText {
+    flex: 1;
+    min-width: 250px;
 }
-.footer .footerText{
-    margin-inline: 70px;
-    margin-top: 43px;
-    margin-bottom: 33px;
+
+.footerText h2 {
+    color: rgb(60, 250, 60);
+    font-size: 24px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    position: relative;
 }
-.footerText p{
-    top: 22px;
+
+.footerText h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 40px;
+    height: 2px;
+    background-color: rgb(60, 250, 60);
+}
+
+.footerText p {
+    color: #a0a0a0;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    font-size: 15px;
+    transition: color 0.3s ease;
+}
+
+.footerText p:hover {
+    color: white;
+}
+
+.footer-links p {
+    cursor: pointer;
+}
+
+.footer-about p {
+    margin-bottom: 20px;
+}
+
+.footer-social {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(60, 250, 60, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(60, 250, 60);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-social a i {
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.footer-social a:hover {
+    background-color: rgb(60, 250, 60);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(60, 250, 60, 0.3);
+}
+
+.footer-social a:hover i {
+    color: rgb(1, 1, 14);
+    transform: scale(1.1);
+}
+
+/* Specific social media hover colors */
+.footer-social a:nth-child(1):hover {
+    background-color: #4267B2; /* Facebook */
+}
+
+.footer-social a:nth-child(2):hover {
+    background-color: #1DA1F2; /* Twitter */
+}
+
+.footer-social a:nth-child(3):hover {
+    background: #f09433;
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); /* Instagram */
+}
+
+.footer-social a:nth-child(4):hover {
+    background-color: #0077B5; /* LinkedIn */
+}
+
+.footer-social a:nth-child(5):hover {
+    background-color: #FF0000; /* YouTube */
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom p {
+    color: #a0a0a0;
+    font-size: 14px;
+}
+
+.footer-bottom span {
+    color: rgb(60, 250, 60);
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 30px;
+    }
+
+    .footer-content {
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    .footerText {
+        min-width: 200px;
+    }
+
+    .footerText h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .footerText p {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
 }
 
 /* form css  */
