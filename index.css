@@ -14,50 +14,92 @@ nav{
     width: 100%;
     display: flex;
     justify-content: space-between;
-    box-shadow: 0px 2px 6px 2px rgb(36, 35, 35);
-    padding: 20px;
-    background-color:rgb(1, 1, 14);
-
-    cursor: pointer;
-}
-ul li a{
-    margin-inline: 25px;
-    text-decoration: none;
-    color: white;
-}
-ul{
-    margin-right: 62px;
-    margin-top: 6px;
-}
-ul li button{
-    width: 100px;
-    height: 34px;
-    background-color: rgb(8, 192, 8);
-    /* border: 2px solid white; */
-    border: none;
-    color: white;
-    font-size: 18px;
-    /* border-radius: 2px; */
-}
-ul button:hover{
-    background-color: transparent;
-    cursor: pointer;
-    border: 2px solid white;
-    color: rgb(32, 250, 32);
-     
-}
-ul li a:hover{
-    color: rgb(94, 250, 94);
-    border-bottom: 2px solid rgb(75, 250, 75);
+    align-items: center;
+    padding: 15px 50px;
+    background-color: rgb(1, 1, 14);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    box-sizing: border-box;
 }
 nav .logo{
-    margin-left: 33px;
-    margin-top: 3px;
-    font-size: 23px;
-    color: rgb(70, 243, 93);
+    margin: 0;
+    font-size: 32px;
+    color: rgb(60, 250, 60);
+    font-weight: bold;
+    font-family: 'Roboto', sans-serif;
 }
-ul li{
+nav ul{
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+nav ul li{
     list-style: none;
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+nav ul li a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 20px;
+    transition: color 0.3s ease;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+nav ul li a:hover{
+    color: rgb(60, 250, 60);
+}
+nav ul li a.nav-btn {
+    background-color: rgb(1, 1, 14);
+    color: rgb(60, 250, 60);
+    border: 2px solid rgb(60, 250, 60);
+    padding: 8px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+    height: 36px;
+    min-width: 120px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+nav ul li a.nav-btn:hover {
+    background-color: rgb(60, 250, 60);
+    color: rgb(1, 1, 14);
+}
+nav ul li button {
+    background-color: rgb(60, 250, 60);
+    color: rgb(1, 1, 14);
+    border: none;
+    padding: 8px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 15px;
+    height: 36px;
+    min-width: 120px;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+nav ul li button:hover{
+    background-color: rgb(45, 220, 45);
 }
 
 .main{
