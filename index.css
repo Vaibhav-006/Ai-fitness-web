@@ -368,71 +368,79 @@ nav ul li button:hover{
 .blog-modal-content::-webkit-scrollbar-thumb:hover {
     background: rgb(40, 200, 40);
 }
-/* contact */
-
-.start{
-    display: flex;
-    justify-content: center;
-}
-.start img{
-    width: 64%;
-    margin-top: -55px;
-    margin-left: -192px;
-}
-.startText{
-    margin-top: 44px;
-    font-size: 33px;
-    margin-left: 112px;
-    
-}
-.startText h1{
-    color: rgb(133, 253, 133);
-}
-.startText h2{
-    color: rgb(55, 248, 55);
+/* Contact Section */
+.contact {
+    padding: 80px 0;
+    background-color: rgb(1, 1, 14);
 }
 
-.connect{
+.contact .head {
     text-align: center;
-    padding: 33px;
+    margin-bottom: 50px;
 }
-.connect .data{
-    border: 2px solid green;
-    width: 400px;
-    height: 240px;
-    padding: 12px;
-    margin-left: 32%;
-    margin-top: 22px;
 
-}
-.data input{
-    width: 300px;
-    height: 22px;
-    padding: 11px;
-    font-size: 20px;
-   margin-top: 22px;
-   border: none;
-   outline: none;
-   border-radius: 2px;
-}
-.data button{
-    width: 320px;
-    height: 45px;
-    border: none;
-    background-color: rgb(16, 255, 16);
+.contact .head h1 {
+    font-size: 42px;
     color: white;
-    font-size: 25px;
-    border-radius: 2px;
-    margin-top: 22px;
-    cursor: pointer;
-}
-.data button:hover{
-    border: 2px solid white;
-    color: rgb(5, 252, 5);
-    background-color: transparent;
-   
+    margin-bottom: 10px;
 }
 
+.contact .head h2 {
+    font-size: 32px;
+    color: white;
+}
+
+.contact .head span {
+    color: rgb(60, 250, 60);
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.contact-info {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.info-card {
+    background-color: rgb(25, 25, 26);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(60, 250, 60, 0.1);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: rgb(60, 250, 60);
+    box-shadow: 0 5px 15px rgba(60, 250, 60, 0.1);
+}
+
+.info-card i {
+    font-size: 32px;
+    color: rgb(60, 250, 60);
+    margin-bottom: 15px;
+}
+
+.info-card h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.info-card p {
+    color: #a0a0a0;
+    font-size: 14px;
+    line-height: 1.5;
+}
 /* Plans Section */
 .plans {
     padding: 80px 0;
