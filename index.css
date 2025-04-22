@@ -441,6 +441,72 @@ nav ul li button:hover{
     font-size: 14px;
     line-height: 1.5;
 }
+
+.contact-form {
+    flex: 1;
+    background-color: rgb(25, 25, 26);
+    padding: 40px;
+    border-radius: 15px;
+    border: 1px solid rgba(60, 250, 60, 0.1);
+}
+
+.contact-form h3 {
+    color: rgb(60, 250, 60);
+    font-size: 24px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(60, 250, 60);
+    border-radius: 8px;
+    background-color: rgb(1, 1, 14);
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: rgb(60, 250, 60);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(60, 250, 60, 0.2);
+}
+
+.contact-form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.contact-form .submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(60, 250, 60);
+    color: rgb(1, 1, 14);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.contact-form .submit-btn:hover {
+    background-color: rgb(45, 220, 45);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(60, 250, 60, 0.3);
+}
 /* Plans Section */
 .plans {
     padding: 80px 0;
