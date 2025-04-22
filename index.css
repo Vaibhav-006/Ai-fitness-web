@@ -903,6 +903,179 @@ nav ul li button:hover{
     height: 30px;
  }
 
+ /* Feedback Form */
+.feedback-form {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    background-color: rgb(1, 1, 14);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    width: 350px;
+    z-index: 1000;
+    animation: slideUp 0.3s ease;
+    border: 1px solid rgb(60, 250, 60);
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgb(60, 250, 60);
+    padding-bottom: 10px;
+}
+
+.form-header .h1 {
+    color: rgb(60, 250, 60);
+    font-size: 20px;
+    margin: 0;
+    font-weight: 600;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: rgb(60, 250, 60);
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-btn:hover {
+    background-color: rgba(60, 250, 60, 0.1);
+    transform: rotate(90deg);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    color: rgb(60, 250, 60);
+    margin-bottom: 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid rgb(60, 250, 60);
+    border-radius: 8px;
+    background-color: rgb(25, 25, 26);
+    color: white;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: rgb(60, 250, 60);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(60, 250, 60, 0.2);
+}
+
+.star-rating {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+
+.star-rating input {
+    display: none;
+}
+
+.star-rating label {
+    font-size: 24px;
+    color: rgb(60, 250, 60);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.5;
+}
+
+.star-rating input:checked ~ label,
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: rgb(60, 250, 60);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: rgb(60, 250, 60);
+    color: rgb(1, 1, 14);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.submit-btn:hover {
+    background-color: rgb(45, 220, 45);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(60, 250, 60, 0.3);
+}
+
+ /* Feedback Button */
+.feedback-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: rgb(60, 250, 60);
+    color: rgb(1, 1, 14);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(60, 250, 60, 0.3);
+    z-index: 1000;
+}
+
+.feedback-btn i {
+    font-size: 18px;
+}
+
+.feedback-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(60, 250, 60, 0.4);
+}
+
  /* AI Health Assistant */
 .ai-assistant {
     padding: 50px 0;
