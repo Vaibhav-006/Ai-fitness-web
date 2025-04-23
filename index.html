@@ -184,50 +184,60 @@
             </div>
         </div>
 
-        <div id="form-container">
-            <h1 class="h1">Food Feedback Form</h1>
-                <form  id="feedback-form" action="https://api.web3forms.com/submit" method="post">
-                <input type="hidden"
-                name="access_key"
-                value="549caab7-ead8-4b3b-aa60-e19c14cd3449"
-                />
-        
+        <!-- conatct -->
+
+        <div id="form-container" class="feedback-form">
+            <div class="form-header">
+                <h1 class="h1">Food Feedback Form</h1>
+                <button class="close-btn" onclick="toggleForm()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <form id="feedback-form" action="https://api.web3forms.com/submit" method="post">
+                <input type="hidden" name="access_key" value="549caab7-ead8-4b3b-aa60-e19c14cd3449" />
+                
                 <div class="form-group">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" placeholder="Enter your name" required>
                 </div>
-    
+
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 </div>
-    
+
                 <div class="form-group">
-                    <label for="rating">Food Rating:</label>
+                    <label for="rating">Service Rating:</label>
                     <div class="star-rating">
-                        <input type="radio" id="star1" name="rating" value="1">
-                        <label for="star1" title="1 star">★</label>
-                        <input type="radio" id="star2" name="rating" value="2">
-                        <label for="star2" title="2 stars">★</label>
-                        <input type="radio" id="star3" name="rating" value="3">
-                        <label for="star3" title="3 stars">★</label>
-                        <input type="radio" id="star4" name="rating" value="4">
-                        <label for="star4" title="4 stars">★</label>
                         <input type="radio" id="star5" name="rating" value="5">
                         <label for="star5" title="5 stars">★</label>
+                        <input type="radio" id="star4" name="rating" value="4">
+                        <label for="star4" title="4 stars">★</label>
+                        <input type="radio" id="star3" name="rating" value="3">
+                        <label for="star3" title="3 stars">★</label>
+                        <input type="radio" id="star2" name="rating" value="2">
+                        <label for="star2" title="2 stars">★</label>
+                        <input type="radio" id="star1" name="rating" value="1">
+                        <label for="star1" title="1 star">★</label>
                     </div>
                 </div>
-    
+
                 <div class="form-group">
                     <label for="feedback">Feedback:</label>
                     <textarea id="feedback" name="feedback" rows="5" placeholder="Share your feedback here..." required></textarea>
                 </div>
-    
-                <button class="button2" type="submit">Submit Feedback</button>
+
+                <button class="submit-btn" type="submit">
+                    <i class="uil uil-message"></i>
+                    Submit Feedback
+                </button>
             </form>
         </div>
-    
-        <button id="toggleFormButton">Feedback Form</button>
+
+        <button id="toggleFormButton" class="feedback-btn">
+            <i class="uil uil-feedback"></i>
+            Feedback
+        </button>
 
         <div class="contact" id="contact">
             <div class="head">
@@ -242,12 +252,55 @@
                 <img src="girl.png" alt="">
             </div>
 
-            <div class="connect">
-                <h3>Connect US</h3>
-                <div class="data">
-                    <input type="text"  placeholder="Enter Name" id="name" value=""> <br>
-                    <input type="text" placeholder="Enter Mobile Number" id="number" value=""> <br>
-                    <button onclick="submit()">Submit</button>
+            <div class="contact" id="contact">
+                <div class="head">
+                    <h1>Let's <span>Begin ...</span></h1>
+                    <h2>Contact <span>Us</span></h2>
+                </div>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="info-card">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <h3>Our Location</h3>
+                            <p>123 Fitness Street, Gym City</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-phone"></i>
+                            <h3>Phone Number</h3>
+                            <p>+91 123 456 7890</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email Address</h3>
+                            <p>info@getfits.com</p>
+                        </div>
+                        <div class="info-card">
+                            <i class="fas fa-clock"></i>
+                            <h3>Working Hours</h3>
+                            <p>Mon - Sat: 6:00 AM - 10:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <h3>Get in Touch</h3>
+                        <form id="contactForm">
+                            <div class="form-group">
+                                <input type="text" id="contactName" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="contactEmail" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="contactPhone" placeholder="Your Phone Number" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="contactMessage" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
