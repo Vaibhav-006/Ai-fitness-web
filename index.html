@@ -416,29 +416,62 @@
             </div>
         </section>
 
-        <!-- Calorie Tracker -->
-        <div class="tracker-card">
-            <h3>Calorie Tracker</h3>
-            <div class="tracker-content">
-                <div class="calorie-input">
-                    <input type="number" id="calorie-input" placeholder="Enter calories">
-                    <button onclick="addCalories()">Add</button>
-                </div>
-                <div class="calorie-display">
-                    <div class="progress-bar">
-                        <div id="calorie-progress" class="progress"></div>
+        <!-- Health Trackers Section -->
+        <section class="health-trackers">
+            <div class="container">
+                <h2>Health Trackers</h2>
+                <div class="trackers-container">
+                    <!-- Calorie Tracker -->
+                    <div class="tracker-card">
+                        <h3>Calorie Tracker</h3>
+                        <div class="tracker-content">
+                            <div class="calorie-input">
+                                <input type="number" id="calorie-input" placeholder="Enter calories">
+                                <button onclick="addCalories()">Add</button>
+                            </div>
+                            <div class="calorie-display">
+                                <div class="progress-bar">
+                                    <div id="calorie-progress" class="progress"></div>
+                                </div>
+                                <div class="calorie-stats">
+                                    <span>Consumed: <span id="calories-consumed">0</span> kcal</span>
+                                    <span>Goal: <span id="calorie-goal">2000</span> kcal</span>
+                                </div>
+                            </div>
+                            <div class="calorie-history">
+                                <h4>Today's Log</h4>
+                                <ul id="calorie-log"></ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="calorie-stats">
-                        <span>Consumed: <span id="calories-consumed">0</span> kcal</span>
-                        <span>Goal: <span id="calorie-goal">2000</span> kcal</span>
+
+                    <!-- Water Intake Tracker -->
+                    <div class="tracker-card">
+                        <h3>Water Intake Tracker</h3>
+                        <div class="tracker-content">
+                            <div class="water-input">
+                                <button onclick="addWater(250)">250ml</button>
+                                <button onclick="addWater(500)">500ml</button>
+                                <button onclick="addWater(1000)">1L</button>
+                            </div>
+                            <div class="water-display">
+                                <div class="progress-bar">
+                                    <div id="water-progress" class="progress"></div>
+                                </div>
+                                <div class="water-stats">
+                                    <span>Consumed: <span id="water-consumed">0</span> ml</span>
+                                    <span>Goal: <span id="water-goal">2000</span> ml</span>
+                                </div>
+                            </div>
+                            <div class="water-history">
+                                <h4>Today's Log</h4>
+                                <ul id="water-log"></ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="calorie-history">
-                    <h4>Today's Log</h4>
-                    <ul id="calorie-log"></ul>
                 </div>
             </div>
-        </div>
+        </section>
 
 
         <div class="footer">
