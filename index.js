@@ -588,21 +588,34 @@ window.onclick = function(event) {
 
 // Health Trackers
 let caloriesConsumed = 0;
+let waterConsumed = 0;
 const calorieGoal = 2000;
+const waterGoal = 2000;
 
 // Initialize trackers from localStorage
 document.addEventListener('DOMContentLoaded', function() {
     // Load saved data
     const savedCalories = localStorage.getItem('caloriesConsumed');
+    const savedWater = localStorage.getItem('waterConsumed');
     const savedCalorieLog = localStorage.getItem('calorieLog');
+    const savedWaterLog = localStorage.getItem('waterLog');
 
     if (savedCalories) {
         caloriesConsumed = parseInt(savedCalories);
         updateCalorieDisplay();
     }
 
+    if (savedWater) {
+        waterConsumed = parseInt(savedWater);
+        updateWaterDisplay();
+    }
+
     if (savedCalorieLog) {
         document.getElementById('calorie-log').innerHTML = savedCalorieLog;
+    }
+
+    if (savedWaterLog) {
+        document.getElementById('water-log').innerHTML = savedWaterLog;
     }
 });
 
@@ -622,7 +635,7 @@ function addCalories() {
     const log = document.getElementById('calorie-log');
     const time = new Date().toLocaleTimeString();
     const logItem = document.createElement('li');
-    // logItem.innerHTML = <span>${calories} kcal</span><span>${time}</span>;
+    logItem.innerHTML = `<span>${calories} kcal</span><span>${time}</span>`;
     log.insertBefore(logItem, log.firstChild);
     
     // Save to localStorage
@@ -632,10 +645,32 @@ function addCalories() {
     input.value = '';
 }
 
+function addWater(amount) {
+    waterConsumed += amount;
+    updateWaterDisplay();
+    
+    // Add to log
+    const log = document.getElementById('water-log');
+    const time = new Date().toLocaleTimeString();
+    const logItem = document.createElement('li');
+    logItem.innerHTML = `<span>${amount} ml</span><span>${time}</span>`;
+    log.insertBefore(logItem, log.firstChild);
+    
+    // Save to localStorage
+    localStorage.setItem('waterConsumed', waterConsumed);
+    localStorage.setItem('waterLog', log.innerHTML);
+}
+
 function updateCalorieDisplay() {
     const progress = (caloriesConsumed / calorieGoal) * 100;
     document.getElementById('calorie-progress').style.width = `${Math.min(progress, 100)}%`;
     document.getElementById('calories-consumed').textContent = caloriesConsumed;
+}
+
+function updateWaterDisplay() {
+    const progress = (waterConsumed / waterGoal) * 100;
+    document.getElementById('water-progress').style.width = `${Math.min(progress, 100)}%`;
+    document.getElementById('water-consumed').textContent = waterConsumed;
 }
 
 // Reset trackers at midnight
@@ -649,10 +684,15 @@ function resetTrackers() {
     
     setTimeout(() => {
         caloriesConsumed = 0;
+        waterConsumed = 0;
         updateCalorieDisplay();
+        updateWaterDisplay();
         document.getElementById('calorie-log').innerHTML = '';
+        document.getElementById('water-log').innerHTML = '';
         localStorage.removeItem('caloriesConsumed');
+        localStorage.removeItem('waterConsumed');
         localStorage.removeItem('calorieLog');
+        localStorage.removeItem('waterLog');
         resetTrackers(); // Set up next reset
     }, timeUntilMidnight);
 }
