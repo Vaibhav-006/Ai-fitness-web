@@ -1471,7 +1471,6 @@ nav .logo{
         height: 32px;
         min-width: 100px;
     }
-<<<<<<< HEAD
 }
  @media (max-width: 768px){
     nav{
@@ -1597,6 +1596,114 @@ nav .logo{
     .contact .head h2 {
         font-size: 24px;
     }
-=======
->>>>>>> efa44a97eefd5e30f63194a9950eef11a27ef67d
 }
+
+.tracker-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 25px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px var(--shadow-color);
+    border: 1px solid var(--border-color);
+}
+
+.tracker-card h3 {
+    color: var(--text-primary);
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.tracker-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.calorie-input, .water-input {
+    display: flex;
+    gap: 10px;
+}
+
+.calorie-input input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 16px;
+}
+
+.calorie-input button, .water-input button {
+    padding: 12px 20px;
+    background-color: var(--accent-color);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.water-input button {
+    flex: 1;
+}
+
+.calorie-input button:hover, .water-input button:hover {
+    background-color: var(--text-primary);
+    color: var(--accent-color);
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: var(--bg-secondary);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px 0;
+}
+
+.progress {
+    height: 100%;
+    background-color: var(--accent-color);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.calorie-stats, .water-stats {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-secondary);
+    font-size: 14px;
+}
+
+.calorie-history, .water-history {
+    margin-top: 20px;
+}
+
+.calorie-history h4, .water-history h4 {
+    color: var(--text-primary);
+    margin-bottom: 10px;
+}
+
+#calorie-log, #water-log {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+#calorie-log li, #water-log li {
+    padding: 8px 12px;
+    background-color: var(--bg-secondary);
+    border-radius: 6px;
+    margin-bottom: 8px;
+    color: var(--text-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
