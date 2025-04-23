@@ -1443,3 +1443,32 @@ nav ul li button:hover{
         flex-direction: column;
     }
 }
+
+@media (max-width: 768px){
+    nav{
+        padding: 12px 20px;
+    }
+    
+nav .logo{
+        font-size: 28px;
+    }
+    
+    nav ul li a {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+    
+    nav ul li a.nav-btn {
+        padding: 6px 20px;
+        font-size: 14px;
+        height: 32px;
+        min-width: 100px;
+    }
+    
+    nav ul li button {
+        padding: 6px 20px;
+        font-size: 14px;
+        height: 32px;
+        min-width: 100px;
+    }
+}
