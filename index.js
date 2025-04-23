@@ -584,3 +584,78 @@ window.onclick = function(event) {
         closeDietPlanModal();
     }
 }
+
+
+// Health Trackers
+let caloriesConsumed = 0;
+const calorieGoal = 2000;
+
+// Initialize trackers from localStorage
+document.addEventListener('DOMContentLoaded', function() {
+    // Load saved data
+    const savedCalories = localStorage.getItem('caloriesConsumed');
+    const savedCalorieLog = localStorage.getItem('calorieLog');
+
+    if (savedCalories) {
+        caloriesConsumed = parseInt(savedCalories);
+        updateCalorieDisplay();
+    }
+
+    if (savedCalorieLog) {
+        document.getElementById('calorie-log').innerHTML = savedCalorieLog;
+    }
+});
+
+function addCalories() {
+    const input = document.getElementById('calorie-input');
+    const calories = parseInt(input.value);
+    
+    if (isNaN(calories) || calories <= 0) {
+        alert('Please enter a valid number of calories');
+        return;
+    }
+
+    caloriesConsumed += calories;
+    updateCalorieDisplay();
+    
+    // Add to log
+    const log = document.getElementById('calorie-log');
+    const time = new Date().toLocaleTimeString();
+    const logItem = document.createElement('li');
+    // logItem.innerHTML = <span>${calories} kcal</span><span>${time}</span>;
+    log.insertBefore(logItem, log.firstChild);
+    
+    // Save to localStorage
+    localStorage.setItem('caloriesConsumed', caloriesConsumed);
+    localStorage.setItem('calorieLog', log.innerHTML);
+    
+    input.value = '';
+}
+
+function updateCalorieDisplay() {
+    const progress = (caloriesConsumed / calorieGoal) * 100;
+    document.getElementById('calorie-progress').style.width = `${Math.min(progress, 100)}%`;
+    document.getElementById('calories-consumed').textContent = caloriesConsumed;
+}
+
+// Reset trackers at midnight
+function resetTrackers() {
+    const now = new Date();
+    const tomorrow = new Date(now);
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    tomorrow.setHours(0, 0, 0, 0);
+    
+    const timeUntilMidnight = tomorrow - now;
+    
+    setTimeout(() => {
+        caloriesConsumed = 0;
+        updateCalorieDisplay();
+        document.getElementById('calorie-log').innerHTML = '';
+        localStorage.removeItem('caloriesConsumed');
+        localStorage.removeItem('calorieLog');
+        resetTrackers(); // Set up next reset
+    }, timeUntilMidnight);
+}
+
+// Start the reset timer
+resetTrackers();
