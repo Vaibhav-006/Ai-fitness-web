@@ -416,6 +416,30 @@
             </div>
         </section>
 
+        <!-- Calorie Tracker -->
+        <div class="tracker-card">
+            <h3>Calorie Tracker</h3>
+            <div class="tracker-content">
+                <div class="calorie-input">
+                    <input type="number" id="calorie-input" placeholder="Enter calories">
+                    <button onclick="addCalories()">Add</button>
+                </div>
+                <div class="calorie-display">
+                    <div class="progress-bar">
+                        <div id="calorie-progress" class="progress"></div>
+                    </div>
+                    <div class="calorie-stats">
+                        <span>Consumed: <span id="calories-consumed">0</span> kcal</span>
+                        <span>Goal: <span id="calorie-goal">2000</span> kcal</span>
+                    </div>
+                </div>
+                <div class="calorie-history">
+                    <h4>Today's Log</h4>
+                    <ul id="calorie-log"></ul>
+                </div>
+            </div>
+        </div>
+
 
         <div class="footer">
             <div class="footer-content">
