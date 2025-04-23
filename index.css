@@ -1,3 +1,15 @@
+:root {
+    /* Dark Theme (Default) */
+    --bg-primary: rgb(1, 1, 14);
+    --bg-secondary: rgb(25, 25, 26);
+    --text-primary: #ffffff;
+    --text-secondary: #a0a0a0;
+    --accent-color: rgb(60, 250, 60);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --card-bg: rgb(25, 25, 26);
+    --shadow-color: rgba(0, 0, 0, 0.3);
+}
+
 *{
     margin: 0%;
     padding: 0%;
@@ -1598,6 +1610,32 @@ nav .logo{
     }
 }
 
+/* Health Trackers Section */
+.health-trackers {
+    padding: 60px 0;
+    background-color: var(--bg-primary);
+}
+
+.health-trackers .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.health-trackers h2 {
+    text-align: center;
+    color: var(--accent-color);
+    font-size: 32px;
+    margin-bottom: 40px;
+}
+
+.trackers-container {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
 .tracker-card {
     background-color: var(--card-bg);
     border-radius: 15px;
@@ -1706,4 +1744,3 @@ nav .logo{
     justify-content: space-between;
     align-items: center;
 }
-
