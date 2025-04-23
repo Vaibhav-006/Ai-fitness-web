@@ -1322,3 +1322,30 @@ nav ul li button:hover{
         font-size: 20px;
     }
 }
+@media (max-width: 992px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-info {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 30px 20px;
+    }
+
+    .contact .head h1 {
+        font-size: 32px;
+    }
+
+    .contact .head h2 {
+        font-size: 24px;
+    }
+}
