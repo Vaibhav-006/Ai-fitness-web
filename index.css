@@ -190,6 +190,183 @@ nav ul li button:hover{
      width: 103%;
 }
 
+/* Program Section */
+.program {
+    padding: 80px 0;
+    background-color: rgb(1, 1, 14);
+    position: relative;
+    overflow: hidden;
+}
+
+.program::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(60, 250, 60, 0.05) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+.program .head {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+.program .head h1 {
+    font-size: 42px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.program .head p {
+    color: #a0a0a0;
+    font-size: 18px;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.program .head span {
+    color: rgb(60, 250, 60);
+}
+
+.ourProgram {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.crd {
+    width: 350px;
+    background-color: rgb(25, 25, 26);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    position: relative;
+    border: 1px solid rgba(60, 250, 60, 0.1);
+}
+
+.crd:hover {
+    transform: translateY(-10px);
+    border-color: rgb(60, 250, 60);
+    box-shadow: 0 8px 20px rgba(60, 250, 60, 0.2);
+}
+
+.program-img {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.program-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.program-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.crd:hover .program-overlay {
+    opacity: 1;
+}
+
+.program-btn {
+    padding: 12px 24px;
+    background-color: rgb(60, 250, 60);
+    color: rgb(1, 1, 14);
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateY(20px);
+}
+
+.crd:hover .program-btn {
+    transform: translateY(0);
+}
+
+.program-content {
+    padding: 25px;
+}
+
+.program-content h2 {
+    color: rgb(60, 250, 60);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.program-content p {
+    color: #a0a0a0;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.program-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.program-features li {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.program-features li i {
+    color: rgb(60, 250, 60);
+    font-size: 12px;
+}
+
+.program-schedule {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    border-top: 1px solid rgba(60, 250, 60, 0.1);
+}
+
+.program-schedule span {
+    color: #a0a0a0;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.program-schedule i {
+    color: rgb(60, 250, 60);
+    font-size: 14px;
+}
+
 /* blog */
 .blog {
     padding: 60px 0;
