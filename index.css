@@ -367,6 +367,39 @@ nav ul li button:hover{
     font-size: 14px;
 }
 
+@media (max-width: 1200px) {
+    .ourPlans {
+        gap: 15px;
+    }
+    
+    .ourPlans .card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 768px) {
+    .plans {
+        padding: 50px 0;
+    }
+    
+    .plans .head h1 {
+        font-size: 30px;
+    }
+    
+    .ourPlans .card {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .ourPlans .card.featured {
+        transform: none;
+    }
+    
+    .ourPlans .card.featured:hover {
+        transform: translateY(-10px);
+    }
+}
+
 /* blog */
 .blog {
     padding: 60px 0;
