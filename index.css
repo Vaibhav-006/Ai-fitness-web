@@ -1954,3 +1954,82 @@ nav .logo{
     justify-content: space-between;
     align-items: center;
 }
+
+/* Quote Generator Styles */
+.quote-generator {
+    padding: 4rem 0;
+    background: var(--bg-color);
+    text-align: center;
+}
+
+.quote-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.quote-box {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.quote-box i {
+    font-size: 2rem;
+    color: var(--primary-color);
+    opacity: 0.5;
+}
+
+.quote-box i.fa-quote-left {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+}
+
+.quote-box i.fa-quote-right {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+#daily-quote {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin: 2rem 0;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+.quote-author {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.new-quote-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0 auto;
+}
+
+.new-quote-btn:hover {
+    background: var(--primary-color-dark);
+    transform: translateY(-2px);
+}
+
+.new-quote-btn i {
+    font-size: 1rem;
+}
