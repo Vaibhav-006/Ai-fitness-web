@@ -699,3 +699,59 @@ function resetTrackers() {
 
 // Start the reset timer
 resetTrackers();
+
+// Fitness Quotes Array
+const fitnessQuotes = [
+    {
+        quote: "The only bad workout is the one that didn't happen.",
+        author: "Unknown"
+    },
+    {
+        quote: "Success starts with self-discipline.",
+        author: "Unknown"
+    },
+    {
+        quote: "Your body can stand almost anything. It's your mind that you have to convince.",
+        author: "Unknown"
+    },
+    {
+        quote: "The pain you feel today will be the strength you feel tomorrow.",
+        author: "Unknown"
+    },
+    {
+        quote: "Don't stop when you're tired. Stop when you're done.",
+        author: "Unknown"
+    },
+    {
+        quote: "The only way to do great work is to love what you do.",
+        author: "Steve Jobs"
+    },
+    {
+        quote: "The difference between try and triumph is just a little umph!",
+        author: "Marvin Phillips"
+    },
+    {
+        quote: "The body achieves what the mind believes.",
+        author: "Unknown"
+    },
+    {
+        quote: "Every day is another chance to get stronger, to eat better, to live healthier, and to be the best version of you.",
+        author: "Unknown"
+    },
+    {
+        quote: "Fitness is not about being better than someone else. It's about being better than you used to be.",
+        author: "Unknown"
+    }
+];
+
+// Function to generate a random quote
+function generateNewQuote() {
+    const randomIndex = Math.floor(Math.random() * fitnessQuotes.length);
+    const quote = fitnessQuotes[randomIndex];
+    
+    document.getElementById('daily-quote').textContent = quote.quote;
+    document.getElementById('quote-author').textContent = `- ${quote.author}`;
+}
+
+// Generate initial quote when page loads
+document.addEventListener('DOMContentLoaded', generateNewQuote);
