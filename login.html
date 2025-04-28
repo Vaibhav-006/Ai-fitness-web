@@ -43,4 +43,17 @@
         </div>
     </div>
 </body>
+
+<script>document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+    
+    // Store login status in localStorage
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('userEmail', email);
+    
+    // Redirect to main website
+    window.location.href = 'index.html';
+});</script>
 </html> 
