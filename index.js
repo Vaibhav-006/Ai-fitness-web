@@ -755,3 +755,96 @@ function generateNewQuote() {
 
 // Generate initial quote when page loads
 document.addEventListener('DOMContentLoaded', generateNewQuote);
+
+// Weekly Challenge Functionality
+const challenges = [
+    {
+        title: "Complete 3 Workouts",
+        description: "Complete any 3 workouts this week"
+    },
+    {
+        title: "30 Minutes of Cardio",
+        description: "Do 30 minutes of cardio exercise"
+    },
+    {
+        title: "Strength Training",
+        description: "Complete a strength training session"
+    },
+    {
+        title: "Stretching Session",
+        description: "Do a 15-minute stretching routine"
+    },
+    {
+        title: "Healthy Meal Prep",
+        description: "Prepare 3 healthy meals"
+    },
+    {
+        title: "8 Hours of Sleep",
+        description: "Get 8 hours of sleep for 3 nights"
+    },
+    {
+        title: "Hydration Goal",
+        description: "Drink 2 liters of water daily"
+    }
+];
+
+let completedChallenges = JSON.parse(localStorage.getItem('completedChallenges')) || [];
+
+function updateProgress() {
+    const progressBar = document.querySelector('.progress');
+    const progressText = document.querySelector('.progress-text');
+    const totalChallenges = challenges.length;
+    const completedCount = completedChallenges.length;
+    
+    const progressPercentage = (completedCount / totalChallenges) * 100;
+    progressBar.style.width = `${progressPercentage}%`;
+    progressText.textContent = `${completedCount}/${totalChallenges} Challenges Completed`;
+}
+
+function renderChallenges() {
+    const challengesList = document.querySelector('.challenges-list');
+    if (!challengesList) {
+        console.error('Challenges list element not found');
+        return;
+    }
+    
+    challengesList.innerHTML = '';
+    
+    challenges.forEach((challenge, index) => {
+        const isCompleted = completedChallenges.includes(index);
+        const challengeItem = document.createElement('div');
+        challengeItem.className = 'challenge-item';
+        
+        challengeItem.innerHTML = `
+            <div class="challenge-content">
+                <h3 class="challenge-title">${challenge.title}</h3>
+                <p class="challenge-description">${challenge.description}</p>
+            </div>
+            <div class="challenge-checkbox ${isCompleted ? 'checked' : ''}" data-index="${index}"></div>
+        `;
+        
+        challengesList.appendChild(challengeItem);
+    });
+    
+    // Add event listeners to checkboxes
+    document.querySelectorAll('.challenge-checkbox').forEach(checkbox => {
+        checkbox.addEventListener('click', () => {
+            const index = parseInt(checkbox.dataset.index);
+            if (completedChallenges.includes(index)) {
+                completedChallenges = completedChallenges.filter(i => i !== index);
+            } else {
+                completedChallenges.push(index);
+            }
+            localStorage.setItem('completedChallenges', JSON.stringify(completedChallenges));
+            updateProgress();
+            renderChallenges();
+        });
+    });
+}
+
+// Initialize weekly challenge section
+document.addEventListener('DOMContentLoaded', () => {
+    console.log('Initializing weekly challenges...');
+    updateProgress();
+    renderChallenges();
+});
