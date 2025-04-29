@@ -2033,3 +2033,126 @@ nav .logo{
 .new-quote-btn i {
     font-size: 1rem;
 }
+
+/* Weekly Challenge Section */
+.weekly-challenge {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+    color: #fff;
+    margin: 2rem 0;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.weekly-challenge .head {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.weekly-challenge .head h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.weekly-challenge .head h1 span {
+    color: #4CAF50;
+}
+
+.challenge-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+
+.challenge-progress {
+    margin-bottom: 2rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 1rem;
+}
+
+.progress {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #fff;
+}
+
+.challenges-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.challenge-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.challenge-item:hover {
+    transform: translateY(-3px);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.challenge-content {
+    flex: 1;
+}
+
+.challenge-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.challenge-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.challenge-checkbox {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: background 0.3s ease;
+}
+
+.challenge-checkbox.checked {
+    background: #4CAF50;
+}
+
+.challenge-checkbox.checked::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-size: 14px;
+}
+
