@@ -2156,3 +2156,28 @@ nav .logo{
     font-size: 14px;
 }
 
+@media (max-width: 768px) {
+    .weekly-challenge {
+        padding: 2rem 1rem;
+    }
+
+    .weekly-challenge .head h1 {
+        font-size: 2rem;
+    }
+
+    .challenge-container {
+        padding: 1rem;
+    }
+
+    .challenge-item {
+        padding: 1rem;
+    }
+
+    .challenge-title {
+        font-size: 1.1rem;
+    }
+
+    .challenge-description {
+        font-size: 0.9rem;
+    }
+}
