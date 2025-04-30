@@ -647,5 +647,30 @@
                 <p>&copy; 2025 <span>GetFit's</span>. All rights reserved.</p>
             </div>
         </div>
+        <script>// Check login status and update UI
+            function checkLoginStatus() {
+                const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+                const loginBtn = document.getElementById('loginBtn');
+                const logoutBtn = document.getElementById('logoutBtn');
+                
+                if (isLoggedIn) {
+                    loginBtn.style.display = 'none';
+                    logoutBtn.style.display = 'block';
+                } else {
+                    loginBtn.style.display = 'block';
+                    logoutBtn.style.display = 'none';
+                }
+            }
+    
+            // Handle logout
+            document.getElementById('logoutBtn').addEventListener('click', function(e) {
+                e.preventDefault();
+                localStorage.removeItem('isLoggedIn');
+                localStorage.removeItem('userEmail');
+                checkLoginStatus();
+            });
+    
+            // Check login status when page loads
+            window.addEventListener('load', checkLoginStatus);</script>
         <script src="index.js"></script>
          
