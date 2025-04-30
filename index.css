@@ -2276,3 +2276,28 @@ nav .logo{
     font-size: 16px;
     text-align: center;
 }
+@media (max-width: 768px) {
+    .timer-container {
+        padding: 20px;
+    }
+
+    .time {
+        font-size: 48px;
+    }
+
+    .timer-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .timer-btn {
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+    }
+
+    .timer-settings {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
