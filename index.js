@@ -576,6 +576,7 @@ async function generateDietPlan() {
         `;
     }
 }
+       
 
 // Close modal when clicking outside
 window.onclick = function(event) {
@@ -585,7 +586,7 @@ window.onclick = function(event) {
     }
 }
 
-
+  
 // Health Trackers
 let caloriesConsumed = 0;
 let waterConsumed = 0;
@@ -848,3 +849,96 @@ document.addEventListener('DOMContentLoaded', () => {
     updateProgress();
     renderChallenges();
 });
+
+// Workout Plan Modal Functions
+function openWorkoutPlanModal() {
+    document.getElementById('workoutPlanModal').style.display = 'block';
+}
+
+function closeWorkoutPlanModal() {
+    document.getElementById('workoutPlanModal').style.display = 'none';
+}
+
+function generateWorkoutPlan() {
+    const goal = document.getElementById('workout-goal').value;
+    const level = document.getElementById('workout-level').value;
+    const days = document.getElementById('workout-days').value;
+    const time = document.getElementById('workout-time').value;
+    const injuries = document.getElementById('workout-injuries').value;
+
+    // Get selected equipment
+    const equipmentCheckboxes = document.querySelectorAll('input[name="equipment"]:checked');
+    const equipment = Array.from(equipmentCheckboxes).map(cb => cb.value);
+
+    // Get selected focus areas
+    const focusCheckboxes = document.querySelectorAll('input[name="focus"]:checked');
+    const focusAreas = Array.from(focusCheckboxes).map(cb => cb.value);
+
+    // Generate workout plan based on inputs
+    const plan = generateWorkoutPlanContent(goal, level, days, time, equipment, focusAreas, injuries);
+    
+    // Display the plan
+    const resultDiv = document.getElementById('workoutPlanResult');
+    resultDiv.innerHTML = plan;
+    resultDiv.scrollIntoView({ behavior: 'smooth' });
+}
+
+function generateWorkoutPlanContent(goal, level, days, time, equipment, focusAreas, injuries) {
+    // This is a mock implementation - in a real app, this would use AI or a database
+    let plan = `
+        <h3>Your Personalized Workout Plan</h3>
+        <p><strong>Goal:</strong> ${goal.replace('_', ' ').toUpperCase()}</p>
+        <p><strong>Level:</strong> ${level.toUpperCase()}</p>
+        <p><strong>Schedule:</strong> ${days} days per week, ${time} minutes per session</p>
+        
+        <h4>Weekly Schedule</h4>
+        <ul>
+            <li>Day 1: Upper Body Focus</li>
+            <li>Day 2: Lower Body Focus</li>
+            <li>Day 3: Core & Cardio</li>
+            ${days > 3 ? `<li>Day 4: Full Body Workout</li>` : ''}
+            ${days > 4 ? `<li>Day 5: Strength Training</li>` : ''}
+            ${days > 5 ? `<li>Day 6: Active Recovery</li>` : ''}
+        </ul>
+
+        <h4>Sample Workout (Day 1)</h4>
+        <ul>
+            <li>Warm-up: 5-10 minutes dynamic stretching</li>
+            <li>Push-ups: 3 sets of 10-15 reps</li>
+            <li>Dumbbell Shoulder Press: 3 sets of 8-12 reps</li>
+            <li>Bent-over Rows: 3 sets of 10-12 reps</li>
+            <li>Bicep Curls: 3 sets of 12-15 reps</li>
+            <li>Cool-down: 5-10 minutes stretching</li>
+        </ul>
+
+        <h4>Equipment Used</h4>
+        <ul>
+            ${equipment.map(eq => `<li>${eq.replace('_', ' ').toUpperCase()}</li>`).join('')}
+        </ul>
+
+        <h4>Focus Areas</h4>
+        <ul>
+            ${focusAreas.map(area => `<li>${area.replace('_', ' ').toUpperCase()}</li>`).join('')}
+        </ul>
+    `;
+
+    if (injuries) {
+        plan += `
+            <h4>Special Considerations</h4>
+            <p>${injuries}</p>
+            <p>Please consult with a fitness professional before starting this program.</p>
+        `;
+    }
+
+    return plan;
+}
+
+// Close modals when clicking outside
+window.onclick = function(event) {
+    if (event.target == document.getElementById('workoutPlanModal')) {
+        closeWorkoutPlanModal();
+    }
+    if (event.target == document.getElementById('dietPlanModal')) {
+        closeDietPlanModal();
+    }
+}
