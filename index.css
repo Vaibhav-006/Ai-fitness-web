@@ -2329,3 +2329,86 @@ nav .logo{
         gap: 20px;
     }
 }
+.workout-plan-btn {
+    padding: 12px 24px;
+    background-color: rgb(60, 250, 60);
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 10px;
+}
+
+.workout-plan-btn:hover {
+    background-color: transparent;
+    border: 2px solid rgb(60, 250, 60);
+    color: rgb(60, 250, 60);
+}
+
+.workout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.equipment-options, .focus-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 10px;
+    background-color: rgba(60, 250, 60, 0.1);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.checkbox-label:hover {
+    background-color: rgba(60, 250, 60, 0.2);
+}
+
+.checkbox-label input[type="checkbox"] {
+    accent-color: rgb(60, 250, 60);
+}
+
+.workout-plan-result {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: rgb(1, 1, 14);
+    border-radius: 8px;
+    border: 1px solid rgb(60, 250, 60);
+}
+
+.workout-plan-result h3 {
+    color: rgb(60, 250, 60);
+    margin-bottom: 15px;
+}
+
+.workout-plan-result p {
+    color: white;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.workout-plan-result ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.workout-plan-result li {
+    color: white;
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: rgba(60, 250, 60, 0.1);
+    border-radius: 4px;
+}
