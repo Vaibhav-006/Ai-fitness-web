@@ -445,7 +445,9 @@
             </div>
             <div class="assistant-controls">
                 <button onclick="openDietPlanModal()" class="diet-plan-btn">Generate Diet Plan</button>
+                <button onclick="openWorkoutPlanModal()" class="workout-plan-btn">Generate Workout Plan</button>
             </div>
+            
             <div class="chat-container">
                 <div class="chat-messages" id="chat-messages">
                     <div class="message bot">
@@ -512,6 +514,94 @@
                 <div id="dietPlanResult" class="diet-plan-result"></div>
             </div>
         </div>
+        <!-- Workout Plan Generator Modal -->
+        <div id="workoutPlanModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeWorkoutPlanModal()">&times;</span>
+                <h2>Generate Your Personalized Workout Plan</h2>
+                <div class="workout-form">
+                    <div class="form-group">
+                        <label for="workout-goal">Primary Goal:</label>
+                        <select id="workout-goal">
+                            <option value="weight_loss">Weight Loss</option>
+                            <option value="muscle_gain">Muscle Gain</option>
+                            <option value="strength">Strength Building</option>
+                            <option value="endurance">Endurance</option>
+                            <option value="flexibility">Flexibility</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="workout-level">Fitness Level:</label>
+                        <select id="workout-level">
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="workout-days">Days per Week:</label>
+                        <select id="workout-days">
+                            <option value="3">3 Days</option>
+                            <option value="4">4 Days</option>
+                            <option value="5">5 Days</option>
+                            <option value="6">6 Days</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="workout-time">Time per Session:</label>
+                        <select id="workout-time">
+                            <option value="30">30 minutes</option>
+                            <option value="45">45 minutes</option>
+                            <option value="60">60 minutes</option>
+                            <option value="90">90 minutes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="workout-equipment">Available Equipment:</label>
+                        <div class="equipment-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="equipment" value="bodyweight"> Bodyweight
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="equipment" value="dumbbells"> Dumbbells
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="equipment" value="barbell"> Barbell
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="equipment" value="resistance_bands"> Resistance Bands
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="equipment" value="cardio_machine"> Cardio Machine
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="workout-focus">Focus Areas:</label>
+                        <div class="focus-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="focus" value="upper_body"> Upper Body
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="focus" value="lower_body"> Lower Body
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="focus" value="core"> Core
+                            </label>
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="focus" value="cardio"> Cardio
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="workout-injuries">Injuries/Limitations:</label>
+                        <textarea id="workout-injuries" placeholder="List any injuries or physical limitations..."></textarea>
+                    </div>
+                    <button onclick="generateWorkoutPlan()" class="generate-btn">Generate Plan</button>
+                </div>
+                <div id="workoutPlanResult" class="workout-plan-result"></div>
+            </div>
+        </div>
 
 
         <section class="bmi-calculator">
@@ -548,6 +638,7 @@
                 </div>
             </div>
         </section>
+       
 
         <!-- Health Trackers Section -->
         <section class="health-trackers">
