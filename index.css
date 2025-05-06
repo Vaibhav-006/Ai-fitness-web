@@ -2544,3 +2544,36 @@ nav .logo{
     display: flex;
     gap: 10px;
 }
+
+.leaderboard-item .achievements i {
+    font-size: 18px;
+    color: #3CB371;
+    cursor: help;
+}
+
+.leaderboard-item.top .achievements i {
+    color: #FFD700;
+}
+
+.leaderboard-item .member-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #3CB371, #2E8B57);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #3CB371;
+    box-shadow: 0 2px 8px rgba(60, 179, 113, 0.3);
+}
+
+.leaderboard-item .member-avatar i {
+    font-size: 24px;
+    color: white;
+}
+
+.leaderboard-item.top .member-avatar {
+    background: linear-gradient(45deg, #FFD700, #FFA500);
+    border-color: #FFD700;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+}
