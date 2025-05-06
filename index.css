@@ -196,7 +196,6 @@ nav .logo{
      
 }
 
-/* program */
 .head{
     text-align: center;
     margin-top: 22px;
@@ -204,18 +203,6 @@ nav .logo{
 }
 .head span{
     color: rgb(60, 250, 60);
-}
-.ourProgram{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-.ourProgram .crd{
-    margin-inline: 22px;
-}
-.crd img:hover{
-    transition: 1.4s ease;
-     width: 103%;
 }
 
 /* Program Section */
