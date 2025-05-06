@@ -2427,3 +2427,120 @@ nav .logo{
         width: 100%;
     }
 }
+
+/* Leaderboard Styles */
+.leaderboard {
+    padding: 60px 0;
+    background-color: var(--bg-primary);
+}
+
+.leaderboard .head {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.leaderboard .head h1 {
+    font-size: 42px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.leaderboard .head span {
+    color: #3CB371;
+}
+
+.leaderboard .head p {
+    color: #aaa;
+    font-size: 18px;
+}
+
+.leaderboard-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.leaderboard-header {
+    display: grid;
+    grid-template-columns: 80px 1fr 120px 150px;
+    padding: 20px;
+    background-color: rgba(60, 179, 113, 0.1);
+    color: #3CB371;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.leaderboard-content {
+    padding: 0 20px;
+}
+
+.leaderboard-item {
+    display: grid;
+    grid-template-columns: 80px 1fr 120px 150px;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.leaderboard-item:last-child {
+    border-bottom: none;
+}
+
+.leaderboard-item:hover {
+    background-color: rgba(60, 179, 113, 0.05);
+}
+
+.leaderboard-item.top {
+    background: linear-gradient(90deg, rgba(60, 179, 113, 0.1), transparent);
+}
+
+.leaderboard-item .rank {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3CB371;
+}
+
+.leaderboard-item.top .rank {
+    color: #FFD700;
+}
+
+.leaderboard-item .member {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.leaderboard-item .member img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #3CB371;
+}
+
+.leaderboard-item .member-info h3 {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.leaderboard-item .member-info .member-level {
+    color: #3CB371;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.leaderboard-item .points {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.leaderboard-item .achievements {
+    display: flex;
+    gap: 10px;
+}
