@@ -2577,3 +2577,42 @@ nav .logo{
     border-color: #FFD700;
     box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
 }
+
+@media (max-width: 768px) {
+    .leaderboard-header {
+        grid-template-columns: 60px 1fr 100px 100px;
+        font-size: 14px;
+        padding: 15px;
+    }
+
+    .leaderboard-item {
+        grid-template-columns: 60px 1fr 100px 100px;
+        padding: 15px;
+    }
+
+    .leaderboard-item .member img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .leaderboard-item .member-info h3 {
+        font-size: 16px;
+    }
+
+    .leaderboard-item .points {
+        font-size: 18px;
+    }
+
+    .leaderboard-item .achievements i {
+        font-size: 16px;
+    }
+
+    .leaderboard-item .member-avatar {
+        width: 40px;
+        height: 40px;
+    }
+
+    .leaderboard-item .member-avatar i {
+        font-size: 20px;
+    }
+}
